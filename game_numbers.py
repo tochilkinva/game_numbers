@@ -21,7 +21,7 @@ class Game():
     def __init__(self):
         """Инициализация параметров"""
         self.number_range = random.randint(MIN_NUMBER, MAX_NUMBER)
-        self.win_num = random.randint(0, self.number_range + 1)
+        self.win_num = random.randint(0, self.number_range)
         self.try_count = 0
         # print('win_num = ', self.win_num) # Число для победы
 
