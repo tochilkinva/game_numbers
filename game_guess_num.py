@@ -9,7 +9,6 @@
 # Вы угадали число за н попыток
 
 import random
-import unittest
 
 MIN_NUMBER = 10
 MAX_NUMBER = 100
@@ -84,38 +83,6 @@ class Game():
         print('----------------------------------------------')
 
 
-class TestGame(unittest.TestCase):
-
-    def setUp(self):
-        self.game = Game()
-
-        self.game.number_range = 50
-        self.game.win_num = 30
-        self.game.try_count = 0
-
-    def test_is_win(self):
-        self.assertTrue(self.game.is_win(30))
-        self.assertFalse(self.game.is_win(0))
-        self.assertFalse(self.game.is_win(100))
-
-    def test_hint(self):
-        self.assertEqual(self.game.hint(10),
-                         'Подсказка: число должно быть намного больше')
-        self.assertEqual(self.game.hint(50),
-                         'Подсказка: число должно быть намного меньше')
-        self.assertEqual(self.game.hint(25),
-                         'Подсказка: число должно быть чуть больше')
-        self.assertEqual(self.game.hint(35),
-                         'Подсказка: число должно быть чуть меньше')
-
-    def test_get_number(self):
-        # self.assertEqual(self.game.is_win(5), '22')
-        pass
-
-
 if __name__ == '__main__':
-    # Закомментировать для игры
-    # unittest.main()
-
     game = Game()
     game.start()
